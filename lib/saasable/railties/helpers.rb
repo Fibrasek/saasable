@@ -30,7 +30,7 @@ module Saasable::Railties
 
       def skip_saasable options
         skip_before_filter :_redirect_if_saas_not_found, options
-        before_filter :_skip_saasable, options
+        prepend_before_filter :_skip_saasable, options
       end
     end
 
